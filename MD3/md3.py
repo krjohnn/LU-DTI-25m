@@ -1,4 +1,5 @@
 import hashlib
+import math
 
 def gcd(a, b):
     while b != 0:
@@ -20,6 +21,7 @@ def main():
     print("Start")
     print(gcd(24,36))
     print(gcdExtended(24,36))
+    print(math.gcd(24,36))
 
 if __name__ == "__main__":
     main()
