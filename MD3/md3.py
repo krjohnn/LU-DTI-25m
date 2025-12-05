@@ -1,6 +1,8 @@
 import hashlib
 import math
 import random
+import base64
+
 
 def gcd(a, b):
     while b != 0:
@@ -20,18 +22,22 @@ def generate_keys(p, q):
 
 def main():
     print("Start")
+
     p = 61
     q = 53
     n = p * q
     phi = (p - 1) * (q - 1)
     e = 5
     print(f"n is {n}, phi is: {phi}, e is: {e}")
+
     g, d, y = gcdExtended(e,phi)
     print(g, d, y)
+    d = d % phi
 
-    print(f"Private key: {e, n}, Purblic key: {d, n}")
+    print(f"Public key: {e, n}, Private key: {d, n}")
 
-    msg=1337
+    msg=23
+    print(msg)
     C=pow(msg,e)%n
     print(f"msg is {msg}, C is {C}")
 
