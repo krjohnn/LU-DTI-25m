@@ -11,17 +11,25 @@ def gcd_extended(a, b):
 def main():
     print("--- ATSLĒGU ĢENERĒŠANA ---")
 
+    #### RSA: Atslēgu Ģenerēšana #####
+    # 1. Izvēlamies pirmskaitļus
     p = 61
     q = 53
+
+    # 2. Aprēķinam moduli un totientu
     n = p * q
     phi = (p - 1) * (q - 1)
+
+    # 3. Izvēlamies publisko eksponentu
     e = 17
     print(f"n is {n}, phi is: {phi}, e is: {e}")
 
+    # 4. Aprēķinam privāto eksponentu (d)
     g, x, y = gcd_extended(e, phi)
     if g != 1:
-        raise ValueError("e and phi are not coprime, choose a different e")
+        raise ValueError("e and phi are not coprime")
     d = x % phi
+    ############################################
 
     print(f"Publiskā atslēga:  (e={e}, n={n})")
     print(f"Privātā atslēga: (d={d}, n={n})")
