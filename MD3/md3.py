@@ -31,7 +31,7 @@ def main():
     d = x % phi
     ############################################
 
-    print(f"Publiskā atslēga:  (e={e}, n={n})")
+    print(f"Publiskā atslēga: (e={e}, n={n})")
     print(f"Privātā atslēga: (d={d}, n={n})")
 
     print("--- ALISE PARAKSTĀS ---")
