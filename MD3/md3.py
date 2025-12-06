@@ -1,6 +1,4 @@
 import hashlib
-import base64
-import math
 
 def gcd_extended(a, b):
     if a == 0:
